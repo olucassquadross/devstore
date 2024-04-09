@@ -10,7 +10,23 @@ fetch(URL)
         const productList = document.createElement('ul');
         products.forEach(product => {
             const listItem = document.createElement('li');
-            listItem.textContent = product.title;
+            
+            // Criar imagem do produto
+            const image = document.createElement('img');
+            image.src = product.thumbnail;// URL da imagem
+            image.alt = product.title; //texto alternativo
+            listItem.appendChild(image);    
+
+            // Criar título do produto
+            const title = document.createElement('span');
+            title.textContent = product.title;
+            listItem.appendChild(title);
+        
+            // Criar preço do produto
+            const price = document.createElement('span');
+            price.textContent = ' - R$ ' + product.price.toFixed(2); // Formatando o preço
+            listItem.appendChild(price);
+
             productList.appendChild(listItem);
         });
 
@@ -20,5 +36,3 @@ fetch(URL)
     .catch(error => {
         console.error('Erro ao obter os dados:', error);
     });
-
-
