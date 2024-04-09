@@ -34,3 +34,33 @@ nav ul li a{
     text-decoration: none;
     color: #fff;
 }
+
+/* Estilos para os cartões dos produtos */
+.product {
+    border: 1px solid #ccc; /* Borda sólida cinza */
+    border-radius: 5px; /* Borda arredondada */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Margem inferior entre os cartões */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 300px; /* Largura dos cartões */
+    display: inline-block; /* Exibição em linha para ficarem em linha */
+}
+
+/* Estilos para a imagem do produto */
+.product img {
+    max-width: 100%; /* Garantir que a imagem não ultrapasse os limites do cartão */
+    height: auto; /* Manter a proporção da imagem */
+}
+
+/* Estilos para o título do produto */
+.product span.title {
+    font-weight: bold; /* Texto em negrito */
+    display: block; /* Exibir em bloco para que fique abaixo da imagem */
+    margin-top: 10px; /* Margem superior */
+}
+
+/* Estilos para o preço do produto */
+.product span.price {
+    color: #007bff; /* Cor azul para o preço */
+    font-size: 18px; /* Tamanho da fonte do preço */
+}
