@@ -30,6 +30,13 @@ fetch(URL)
             const price = document.createElement('span');
             price.textContent = ' - R$ ' + product.price.toFixed(2); // Formatando o preço
             productDiv.appendChild(price);
+            
+            //Criar botão "Comprar" para adicionar ao carrinho
+            const buyButton = document.createElement('button');
+            buyButton.textContent = "Comprar";
+            buyButton.addEventListener('click', () => addToCart(product));
+            productDiv.appendChild(buyButton);
+
 
             // Adicionar a div do produto ao contêiner principal
             productListContainer.appendChild(productDiv);
@@ -38,3 +45,9 @@ fetch(URL)
     .catch(error => {
         console.error('Erro ao obter os dados:', error);
     });
+
+
+    //Função para adicionar o produto ao carrinho
+    function addToCart(product) {
+        alert("Produto Adicionado", product);
+    }
