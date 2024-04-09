@@ -6,32 +6,34 @@ fetch(URL)
         // Manipular os dados recebidos, por exemplo:
         const products = data.results;
 
-        // Criar elementos HTML dinamicamente
-        const productList = document.createElement('ul');
+        // Selecionar o elemento onde os produtos serão renderizados
+        const productListContainer = document.getElementById('product-list');
+
+        // Criar uma div para cada produto e renderizar os produtos dentro delas
         products.forEach(product => {
-            const listItem = document.createElement('li');
-            
+            // Criar uma div para o produto
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product'); // Adicionar uma classe para estilização
+
             // Criar imagem do produto
             const image = document.createElement('img');
-            image.src = product.thumbnail;// URL da imagem
-            image.alt = product.title; //texto alternativo
-            listItem.appendChild(image);    
+            image.src = product.thumbnail; // URL da imagem
+            image.alt = product.title; // Texto alternativo da imagem
+            productDiv.appendChild(image);
 
             // Criar título do produto
             const title = document.createElement('span');
             title.textContent = product.title;
-            listItem.appendChild(title);
-        
+            productDiv.appendChild(title);
+
             // Criar preço do produto
             const price = document.createElement('span');
             price.textContent = ' - R$ ' + product.price.toFixed(2); // Formatando o preço
-            listItem.appendChild(price);
+            productDiv.appendChild(price);
 
-            productList.appendChild(listItem);
+            // Adicionar a div do produto ao contêiner principal
+            productListContainer.appendChild(productDiv);
         });
-
-        // Inserir na página HTML
-        document.getElementById('product-list').appendChild(productList);
     })
     .catch(error => {
         console.error('Erro ao obter os dados:', error);
