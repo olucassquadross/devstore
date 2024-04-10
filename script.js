@@ -47,7 +47,7 @@ fetch(URL)
     });
 
 
-    //Função para adicionar o produto ao carrinho
-    function addToCart(product) {
-        alert("Produto Adicionado", product);
-    }
+//Função para adicionar o produto ao carrinho
+function addToCart(product) {
+    alert("Produto Adicionado", product);
+}
