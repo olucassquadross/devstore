@@ -28,7 +28,7 @@ fetch(URL)
 
             // Criar preço do produto
             const price = document.createElement('span');
-            price.textContent = ' - R$ ' + product.price.toFixed(2); // Formatando o preço
+            price.innerHTML = `<h3>R$ ${product.price.toFixed(2)}</h3>`;            
             productDiv.appendChild(price);
 
             // Criar botão "Comprar" para adicionar ao carrinho
