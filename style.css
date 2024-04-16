@@ -104,6 +104,13 @@ main {
     transition: background-color 0.3s;
 }
 
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
 /* Estilos para Dispositivos Móveis */
 @media (max-width: 768px) {
     header {
